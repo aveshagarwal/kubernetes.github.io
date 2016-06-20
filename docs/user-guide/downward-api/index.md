@@ -35,7 +35,7 @@ Containers consume information from the downward API using environment
 variables or using a volume plugin.
 
 
-### Environment variables
+## Environment variables
 
 Most environment variables in the Kubernetes API use the `value` field to carry
 simple values.  However, the alternate `valueFrom` field allows you to specify
@@ -66,8 +66,12 @@ and in their power-of-two equivalents are `1Ki`(kibibyte), `1Mi`(mebibyte),
 `1Gi`(gibibyte), `1Ti`(tebibyte), `1Pi`(pebibyte), `1Ei`(exbibyte). If the `divisor`
 is not specified, it defaults to "1" for cpu and memory.
 
+| Settings        | Cpu          | Memory  |
+| ------------- |-------------| -----|
+| `resource` | `limits.cpu`, `requests.cpu`| `limits.memory`, `requests.memory`|
+| `divisor` | `1`, `1m` | `1`, `1k`, `1M`, `1G`, `1T`, `1P`, `1E`, `1Ki`, `1Mi`, `1Gi`, `1Ti`, `1Pi`, `1Ei`|
 
-## Example
+### Example
 
 This is an example of a pod that consumes its name and namespace via the
 downward API:
@@ -78,7 +82,7 @@ This is an example of a pod that consumes its container's resources via the down
 
 {% include code.html language="yaml" file="dapi-container-resources.yaml" ghlink="/docs/user-guide/downward-api/dapi-container-resources.yaml" %}
 
-### Downward API volume
+## Downward API volume
 
 Using a similar syntax it's possible to expose pod information to containers using plain text files.
 Downward API are dumped to a mounted volume. This is achieved using a `downwardAPI`
@@ -110,7 +114,7 @@ The downward API volume refreshes its data in step with the kubelet refresh loop
 In future, it will be possible to specify a specific annotation or label.
 
 
-## Example
+### Example
 
 This is an example of a pod that consumes its labels and annotations via the downward API volume, labels and annotations are dumped in `/etc/labels` and in `/etc/annotations`, respectively:
 
@@ -119,6 +123,10 @@ This is an example of a pod that consumes its labels and annotations via the dow
 This is an example of a pod that consumes its container's resources via the downward API volume.
 
 {% include code.html language="yaml" file="volume/dapi-volume-resources.yaml" ghlink="/docs/user-guide/downward-api/volume/dapi-volume-resources.yaml" %}
+
+## Default values for container resource limits
+
+If cpu and memory limits are not specified for a container, the downward API will default to node's cpu and memory capacities.
 
 Some more thorough examples:
    * [environment variables](/docs/user-guide/environment-guide/)
