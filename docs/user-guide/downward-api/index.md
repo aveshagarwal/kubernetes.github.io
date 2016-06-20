@@ -66,10 +66,14 @@ and in their power-of-two equivalents are `1Ki`(kibibyte), `1Mi`(mebibyte),
 `1Gi`(gibibyte), `1Ti`(tebibyte), `1Pi`(pebibyte), `1Ei`(exbibyte). If the `divisor`
 is not specified, it defaults to "1" for cpu and memory.
 
-| Settings        | Cpu          | Memory  |
+The table shows possible values for cpu and memory resources:
+
+
+| Setting        | Cpu          | Memory  |
 | ------------- |-------------| -----|
-| `resource` | `limits.cpu`, `requests.cpu`| `limits.memory`, `requests.memory`|
-| `divisor` | `1`, `1m` | `1`, `1k`, `1M`, `1G`, `1T`, `1P`, `1E`, `1Ki`, `1Mi`, `1Gi`, `1Ti`, `1Pi`, `1Ei`|
+| resource | limits.cpu, requests.cpu| limits.memory, requests.memory|
+| divisor | 1, 1m | 1, 1k, 1M, 1G, 1T, 1P, 1E, 1Ki, 1Mi, 1Gi, 1Ti, 1Pi, 1Ei|
+
 
 ### Example
 
@@ -124,10 +128,10 @@ This is an example of a pod that consumes its container's resources via the down
 
 {% include code.html language="yaml" file="volume/dapi-volume-resources.yaml" ghlink="/docs/user-guide/downward-api/volume/dapi-volume-resources.yaml" %}
 
-## Default values for container resource limits
-
-If cpu and memory limits are not specified for a container, the downward API will default to node's cpu and memory capacities.
-
 Some more thorough examples:
    * [environment variables](/docs/user-guide/environment-guide/)
    * [downward API](/docs/user-guide/downward-api/)
+
+## Default values for container resource limits
+
+If cpu and memory limits are not specified for a container, the downward API will default to node's cpu and memory capacities.
