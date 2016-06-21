@@ -59,13 +59,13 @@ optional for environment variables and defaults to the current container. The
 `resource` field is an expression designating a resource in a container, and the `divisor`
 field specifies an output format of the resource being exposed. If the `divisor`
 is not specified, it defaults to "1" for cpu and memory. The table shows possible
-values for cpu and memory resources for resource and divisor settings:
+values for cpu and memory resources for `resource` and `divisor` settings:
 
 
 | Setting        | Cpu          | Memory  |
 | ------------- |-------------| -----|
 | resource | limits.cpu, requests.cpu| limits.memory, requests.memory|
-| divisor | `1`(cores), `1m`(millicores) | `1`(bytes), `1k`(kilobytes),`1M`(megabytes), `1G`(gigabytes), `1T`(terabytes), `1P`(petabytes), `1E`(exabytes), `1Ki`(kibibyte), `1Mi`(mebibyte),`1Gi`(gibibyte), `1Ti`(tebibyte), `1Pi`(pebibyte), `1Ei`(exbibyte)|
+| divisor | 1(cores), 1m(millicores) | 1(bytes), 1k(kilobytes), 1M(megabytes), 1G(gigabytes), 1T(terabytes), 1P(petabytes), 1E(exabytes), 1Ki(kibibyte), 1Mi(mebibyte), 1Gi(gibibyte), 1Ti(tebibyte), 1Pi(pebibyte), 1Ei(exbibyte)|
 
 
 ### Example
