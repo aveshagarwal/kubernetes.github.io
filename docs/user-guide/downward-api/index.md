@@ -65,9 +65,7 @@ values for cpu and memory resources for resource and divisor settings:
 | Setting        | Cpu          | Memory  |
 | ------------- |-------------| -----|
 | resource | limits.cpu, requests.cpu| limits.memory, requests.memory|
-| divisor | `1`(cores), `1m`(millicores) | `1`(bytes), `1k`(kilobytes),
-`1M`(megabytes), `1G`(gigabytes), `1T`(terabytes), `1P`(petabytes), `1E`(exabytes), `1Ki`(kibibyte), `1Mi`(mebibyte),
-`1Gi`(gibibyte), `1Ti`(tebibyte), `1Pi`(pebibyte), `1Ei`(exbibyte)|
+| divisor | `1`(cores), `1m`(millicores) | `1`(bytes), `1k`(kilobytes),`1M`(megabytes), `1G`(gigabytes), `1T`(terabytes), `1P`(petabytes), `1E`(exabytes), `1Ki`(kibibyte), `1Mi`(mebibyte),`1Gi`(gibibyte), `1Ti`(tebibyte), `1Pi`(pebibyte), `1Ei`(exbibyte)|
 
 
 ### Example
