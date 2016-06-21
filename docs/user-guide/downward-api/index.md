@@ -56,23 +56,18 @@ The `resourceFieldRef` is a structure that has a `containerName` field, a `resou
 field, and a `divisor` field. The `containerName` is the name of a container,
 whose resource (cpu or memory) information is to be exposed. The `containerName` is
 optional for environment variables and defaults to the current container. The
-`resource` field is an expression designating a resource in a container, and
-possible values are `limits.cpu`, `limits.memory`, `requests.cpu`, and `requests.memory`.
-The `divisor` field specifies an output format of the resource being exposed. The
-`divisor`'s possible values for cpu are `1`(cores)  and `1m`(millicores). The `divisor`'s
-possible values for memory in fixed point integer (decimal) are `1`(bytes), `1k`(kilobytes),
-`1M`(megabytes), `1G`(gigabytes), `1T`(terabytes), `1P`(petabytes), `1E`(exabytes),
-and in their power-of-two equivalents are `1Ki`(kibibyte), `1Mi`(mebibyte),
-`1Gi`(gibibyte), `1Ti`(tebibyte), `1Pi`(pebibyte), `1Ei`(exbibyte). If the `divisor`
-is not specified, it defaults to "1" for cpu and memory.
-
-The table shows possible values for cpu and memory resources:
+`resource` field is an expression designating a resource in a container, and the `divisor`
+field specifies an output format of the resource being exposed. If the `divisor`
+is not specified, it defaults to "1" for cpu and memory. The table shows possible
+values for cpu and memory resources for resource and divisor settings:
 
 
 | Setting        | Cpu          | Memory  |
 | ------------- |-------------| -----|
 | resource | limits.cpu, requests.cpu| limits.memory, requests.memory|
-| divisor | 1, 1m | 1, 1k, 1M, 1G, 1T, 1P, 1E, 1Ki, 1Mi, 1Gi, 1Ti, 1Pi, 1Ei|
+| divisor | `1`(cores), `1m`(millicores) | `1`(bytes), `1k`(kilobytes),
+`1M`(megabytes), `1G`(gigabytes), `1T`(terabytes), `1P`(petabytes), `1E`(exabytes), `1Ki`(kibibyte), `1Mi`(mebibyte),
+`1Gi`(gibibyte), `1Ti`(tebibyte), `1Pi`(pebibyte), `1Ei`(exbibyte)|
 
 
 ### Example
